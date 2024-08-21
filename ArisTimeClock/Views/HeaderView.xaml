@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArisTimeClock.Views.HeaderView">
+    <Grid >
+        <Button x:Name="LogoutButton"
+                Text="Logout"
+                HorizontalOptions="Start"
+                FontSize="Title"
+                TextColor="{x:StaticResource Primary}"
+                Background="Transparent"
+                Clicked="Logout_Clicked">
+            <Button.ImageSource>
+                <FontImageSource Color="{x:StaticResource Primary}" FontFamily="fontawesome" Glyph=""/>
+            </Button.ImageSource>
+        </Button>
+
+        <Label x:Name="TitleLabel"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Title"
+                TextColor="{x:StaticResource PrimaryDark}"/>
+
+
+        <Button x:Name="RightButton"
+                HorizontalOptions="End"
+                FontSize="Title"
+                TextColor="{x:StaticResource Primary}"
+                Background="Transparent"
+               IsVisible="False">
+            <Button.ImageSource>
+                <FontImageSource Color="{x:StaticResource Primary}" FontFamily="fontawesome" Glyph="+"/>
+            </Button.ImageSource>
+        </Button>
+
+    </Grid>
+</ContentView>
+

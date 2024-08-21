@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArisTimeClock.Views.ManualClockRequestPage"
+             xmlns:viewmodel="clr-namespace:ArisTimeClock.ViewModels"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:DataType="viewmodel:ManualClockRequestViewModel"
+             Title="Manual Clock">
+    <Grid HorizontalOptions="Fill"
+                VerticalOptions="Fill">
+
+        <syncfusion:SfDataGrid ItemsSource="{Binding List}"
+                               SelectionMode="None"
+                               AutoGenerateColumnsMode="None"
+                               SortingMode="None"
+                               ColumnWidthMode="Fill">
+            <syncfusion:SfDataGrid.Columns>
+
+                <syncfusion:DataGridTextColumn MappingName="Date"  HeaderText="Date" AllowFocus="False"/>
+                <syncfusion:DataGridTextColumn MappingName="Time" HeaderText="Time" AllowFocus="False"/>
+                <syncfusion:DataGridTextColumn MappingName="Reason" HeaderText="Reason" AllowFocus="False"/>
+                <syncfusion:DataGridTextColumn MappingName="ClockStatus" HeaderText="Clock Status" AllowFocus="False"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+</ContentPage>

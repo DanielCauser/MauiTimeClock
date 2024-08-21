@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ArisTimeClock.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ArisTimeClock.Views"
+    x:Name="shellMain">
+
+    <ShellContent
+        Shell.NavBarIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Title="Login"
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="LoginPage" />
+
+    <TabBar FlyoutDisplayOptions="AsMultipleItems"
+            Shell.NavBarIsVisible="True"
+            Shell.FlyoutBehavior="Disabled">
+
+        <!--<Grid BindingContext="{x:Reference shellMain}">
+                <Button Text="Logout"
+                        HorizontalOptions="Start"
+                        FontSize="Title"
+                        TextColor="{x:StaticResource Primary}"
+                        Background="Transparent"
+                        Clicked="TitleLogoutButton_Clicked">
+                    <Button.ImageSource>
+                        <FontImageSource Color="{x:StaticResource Primary}" FontFamily="fontawesome" Glyph=""/>
+                    </Button.ImageSource>
+                </Button>
+
+                <Label x:Name="TabTitleLabel"
+                       Text="Clock"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="Title"
+                        TextColor="{x:StaticResource PrimaryDark}"/>
+            </Grid>-->
+
+        <ShellContent ContentTemplate="{DataTemplate local:MainPage}"
+                      Route="MainPage"
+                      Icon="clock"
+                      Title="Clock">
+
+            <Shell.TitleView>
+                <local:HeaderView PageTitle="Clock" />
+            </Shell.TitleView>
+
+        </ShellContent>
+
+        <ShellContent ContentTemplate="{DataTemplate local:MemosPage}"
+                      Route="MemosPage"
+                      Icon="memo"
+                      Title="Memos">
+            <Shell.TitleView>
+                <local:HeaderView PageTitle="Memos" />
+            </Shell.TitleView>
+        </ShellContent>
+
+        <ShellContent ContentTemplate="{DataTemplate local:ManualClockRequestPage}"
+                      Route="ManualClockRequestPage"
+                      Icon="clock"
+                      Title="Manual Clock">
+
+            <Shell.TitleView BindingContext="{x:Reference shellMain}">
+                <local:HeaderView PageTitle="Manual Clock Request"
+                                  x:Name="ManualClockHeader"/>
+            </Shell.TitleView>
+            
+        </ShellContent>
+    </TabBar>
+</Shell>
+

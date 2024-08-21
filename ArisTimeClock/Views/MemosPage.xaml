@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ArisTimeClock.Views.MemosPage"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             xmlns:viewmodel="clr-namespace:ArisTimeClock.ViewModels"
+             x:DataType="viewmodel:MemosViewModel"
+             Title="Memos">
+    <Grid HorizontalOptions="FillAndExpand"
+                 VerticalOptions="FillAndExpand">
+
+        <syncfusion:SfDataGrid ItemsSource="{Binding Memos}"
+                               SelectionMode="Single"
+                               AutoGenerateColumnsMode="None"
+                               SortingMode="Single"
+                               ColumnWidthMode="Fill"
+                               CellTappedCommand="{Binding MemoSelectedCommand}">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:DataGridTextColumn MappingName="DateSent"  HeaderText="Date" AllowFocus="False"/>
+                <syncfusion:DataGridTextColumn MappingName="SentBy" HeaderText="By" AllowFocus="False"/>
+                <syncfusion:DataGridTextColumn MappingName="Status.Value" HeaderText="Status" AllowFocus="False"/>
+            </syncfusion:SfDataGrid.Columns>
+
+            <syncfusion:SfDataGrid.SortColumnDescriptions>
+                <syncfusion:SortColumnDescription ColumnName="DateSent" SortDirection="Descending" />
+                <syncfusion:SortColumnDescription ColumnName="Status.Value" SortDirection="Descending" />
+            </syncfusion:SfDataGrid.SortColumnDescriptions>
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+    
+</ContentPage>
